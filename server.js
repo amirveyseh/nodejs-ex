@@ -98,7 +98,14 @@ app.post('/twilio', function (req, res) {
     // Create TwiML response
     const twiml = new VoiceResponse();
 
-    twiml.say('Hello from your pals at Twilio! Have fun.');
+            twiml.say(
+                {
+                    voice: 'woman',
+                    language: 'en',
+                    loop: 2
+                },
+                'Your Token is ' + req.query.token
+            );
 
     res.writeHead(200, { 'Content-Type': 'text/xml' });
     res.end(twiml.toString());
