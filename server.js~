@@ -95,7 +95,6 @@ app.get('/pagecount', function (req, res) {
 });
 
 app.post('/twilio', function (req, res) {
-console.log(req.query.token);
     // Create TwiML response
     const twiml = new VoiceResponse();
 

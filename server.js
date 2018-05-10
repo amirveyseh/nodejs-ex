@@ -104,7 +104,7 @@ app.post('/twilio', function (req, res) {
                     language: 'en',
                     loop: 2
                 },
-                'Your Token is ' + req.query.token
+                'Your Token is ' + req.query.token.split("").join(",")
             );
 
     res.writeHead(200, { 'Content-Type': 'text/xml' });
